@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th= "http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Student Confirmation</title>
+</head>
+
+<body>
+    <h3>Student Confirmation</h3>
+    The student is confirmed: <span th:text="${student.getFirstName()} + ' ' + ${student.getLastName()}"/>
+    <br><br>
+    <span th:text="${student.getFirstName()}"/> is from: <span th:text="${student.getCountry()}"/>
+    <br><br>
+    <span th:text="${student.getFirstName()}"/> likes to program in <span th:text="${student.getFavouriteLanguage()}"/>
+    <br><br>
+    <span th:text="${student.getFirstName()}"/> likes to work on
+    <ul>
+        <li th:each="tempSystem: ${student.getFavouriteSystems()}" th:text="${tempSystem}"/>
+    </ul>
+</body>
+</html>
